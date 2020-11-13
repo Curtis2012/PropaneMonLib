@@ -148,6 +148,7 @@ bool loadConfig()
 	mqttTopicCtrl = configDoc["site"]["mqtt_topic_ctrl"];	
 	mqttUid = configDoc["site"]["mqtt_uid"];
 	mqttPwd = configDoc["site"]["mqtt_pwd"];
+	otaPwd = configDoc["site"]["otapwd"];
 	debug = configDoc["site"]["debug"];
 	sleepTimeAboveFloor = configDoc["site"]["sleeptimeabovefloor"];
 	sleepTimeBelowFloor = configDoc["site"]["sleeptimebelowfloor"];
