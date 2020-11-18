@@ -158,26 +158,30 @@ bool loadConfig()
 
 	Serial.println("Config loaded");
 	
-	msgn = snprintf(msgbuff, MSGBUFFLEN, "\nCongif dump:\n sitename %s\npssid %s\ntimezone %i", sitename, pssid, timeZone);
-    Serial.println(msgbuff);
-	msgn = snprintf(msgbuff, MSGBUFFLEN, "\ndst %i\nppwd %s\nwifiTryAlt %i\nassid %s\napwd %s", dst, ppwd, wifiTryAlt, assid, apwd);
-	Serial.println(msgbuff);
-	
-	Serial.println(mqttTopic);
-	Serial.println(mqttUid);
-	Serial.println(mqttPwd);
-	Serial.println(debug);	
-	Serial.println(deepSleepTime);
-	Serial.println(empericalScaleFactor);
-	
-    msgn = snprintf(msgbuff, MSGBUFFLEN, "\nmqttTopic %s\nmqttUid %s", mqttTopicData, mqttUid);
-    Serial.println(msgbuff);
-	msgn = snprintf(msgbuff, MSGBUFFLEN, "\n\nmqttPwd %s\ndebug %i", mqttPwd, debug);
-	Serial.println(msgbuff);
-	msgn = snprintf(msgbuff, MSGBUFFLEN, "\nsleepTimeAboveFloor %i\nsleeptimeBelowfloor %i", sleepTimeAboveFloor, sleepTimeBelowFloor);
-	Serial.println(msgbuff);
-	msgn = snprintf(msgbuff, MSGBUFFLEN, "\nsleeptimefloor %i", sleepTimeFloor);
-	Serial.println(msgbuff);
+	if (debug)
+	{
+		msgn = snprintf(msgbuff, MSGBUFFLEN, "\nCongif dump:\n sitename %s\npssid %s\ntimezone %i", sitename, pssid, timeZone);
+		Serial.println(msgbuff);
+		msgn = snprintf(msgbuff, MSGBUFFLEN, "\ndst %i\nppwd %s\nwifiTryAlt %i\nassid %s\napwd %s", dst, ppwd, wifiTryAlt, assid, apwd);
+		Serial.println(msgbuff);
+
+		Serial.println(mqttTopicData);
+		Serial.println(mqttTopicCtrl);
+		Serial.println(mqttUid);
+		Serial.println(mqttPwd);
+		Serial.println(debug);
+		Serial.println(deepSleepTime);
+		Serial.println(empericalScaleFactor);
+
+		msgn = snprintf(msgbuff, MSGBUFFLEN, "\nmqttTopic %s\nmqttUid %s", mqttTopicData, mqttUid);
+		Serial.println(msgbuff);
+		msgn = snprintf(msgbuff, MSGBUFFLEN, "\n\nmqttPwd %s\ndebug %i", mqttPwd, debug);
+		Serial.println(msgbuff);
+		msgn = snprintf(msgbuff, MSGBUFFLEN, "\nsleepTimeAboveFloor %i\nsleeptimeBelowfloor %i", sleepTimeAboveFloor, sleepTimeBelowFloor);
+		Serial.println(msgbuff);
+		msgn = snprintf(msgbuff, MSGBUFFLEN, "\nsleeptimefloor %i", sleepTimeFloor);
+		Serial.println(msgbuff);
+	}
 	
 	return true;
 }
