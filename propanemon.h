@@ -31,7 +31,7 @@ bool dst = false;
 
 
 long int deepSleepTime = 0;   // deep sleep time in ms
-float kgToLbsFactor = -2.20462F;
+float kgToLbsFactor = 2.20462F;
 float empericalScaleFactor = -23680.00;  // derived by testing with SparkFuns calibrate sketch...add dynamic calibration later...
 int sleepTimeAboveFloor = 0;   // how long to sleep if tank above % full "floor" in seconds
 int sleepTimeBelowFloor = 0;   // how long to sleep if tank below % full "floor" in seconds
