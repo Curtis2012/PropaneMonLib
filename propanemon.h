@@ -43,6 +43,7 @@ struct propaneTank_t
   int tankNum = 4;
   float capacityKg = 11.33;  // 25lbs = 11.33kg
   float tareKg = 6.486;       // 14.3lbs = 6.486kg
+  float regulatorWeight = 0;
   float netPropaneWt = 0;
   float scaleWeight = 0;
   float percentFull = 0;
@@ -155,6 +156,7 @@ bool loadConfig()
 	sleepTimeBelowFloor = configDoc["site"]["sleeptimebelowfloor"];
 	sleepTimeFloor = configDoc["site"]["sleeptimefloor"];
 	empericalScaleFactor = configDoc["site"]["empericalscalefactor"];
+	propaneTank25lb.regulatorWeight = configDoc["site"]["regulatorweight"];
 
 	Serial.println("Config loaded");
 	
